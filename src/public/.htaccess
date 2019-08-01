@@ -1,0 +1,14 @@
+# Let's work with apache.
+# If you want to use other server libs like Nginx,
+# Please rewrite rules by yourself.
+<ifModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !^/cordova
+  RewriteCond %{REQUEST_URI} !^/app
+  RewriteCond %{REQUEST_URI} !^/asset
+  RewriteCond %{REQUEST_URI} !^/component
+  RewriteRule (.*) / [L]
+</ifModule>

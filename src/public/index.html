@@ -1,0 +1,49 @@
+<html>
+<head>
+
+<!--
+# Application base url
+Change to proper path from your DocumentRoot.
+
+* force overriden when running as cordova-app.
+* trailing slash is required!!
+
+cordova : ./
+ripple  : ./
+web     : /PATH/TO/WEBROOT/ or /
+
+-->
+<base id="application-base-path" href="/">
+
+
+<!--
+Metas ==== -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+<meta name="format-detection" content="telephone=no" />
+
+<!--
+Extras ==== -->
+<link rel="shortcut icon" href="asset/favicon.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="asset/extra/base.css" />
+<link rel="stylesheet" type="text/css" href="asset/extra/github-markdown.css" />
+<link rel="stylesheet" type="text/css" href="asset/extra/prism.css" />
+<script type="text/javascript" src="asset/extra/prism.js"></script>
+
+<!--
+Try to load cordova.js
+If you dont use with cordova, remove this part.
+-->
+<script type="text/javascript" src="asset/cordova.js"></script>
+<script type="text/javascript">
+function before(){
+  // Do something before main application run.
+}
+</script>
+<title>Slipper</title>
+</head>
+<body onload="before.call(this);">
+  <div id="container" class="markdown-body"></div>
+  <script type="text/javascript" src="app/core/init.js"></script>
+</body>
+</html>
